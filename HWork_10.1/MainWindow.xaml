@@ -1,0 +1,37 @@
+﻿<Window x:Class="HWork_10._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HWork_10._1"
+        mc:Ignorable="d"
+        Title="Консультант А" 
+        Height="450"
+        Width="640"
+        Background="Gray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="Вывести данные" HorizontalAlignment="Left" Margin="150,0,0,0" VerticalAlignment="Center" Height="35" Width="150" Click="Button_Click" Grid.Row="3"/>
+        <TextBox x:Name="surname" Background="Gray" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="3" Height="16"/>
+        <TextBox x:Name="firstname" Background="Gray" HorizontalAlignment="Left" Margin="135,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="3" Height="16"/>
+        <TextBox x:Name="lastname" Background="Gray" HorizontalAlignment="Left" Margin="260,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="3" Height="16"/>
+        <TextBox x:Name="phnumber" Background="Gray" HorizontalAlignment="Left" Margin="385,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="3" Height="16"/>
+        <TextBox x:Name="pasport" Background="Gray" HorizontalAlignment="Left" Margin="510,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Grid.Row="3" Height="16"/>
+        <DataGrid x:Name='Grid' Background="LightGray" RowBackground="LightGray" AlternatingRowBackground="PapayaWhip" ItemsSource="{Binding Source=Konsult}" AutoGenerateColumns="False" Margin="10,10,10,5" Grid.RowSpan="3">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Width="120" Binding="{Binding surname}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Width="90" Binding="{Binding firstname}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="Отчество" Width="120" Binding="{Binding lastname}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер телефона" Width="130" Binding="{Binding PhNumber}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Серия номер паспорта" Width="130" Binding="{Binding Pasport}" IsReadOnly="True"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Сохранить изменения" HorizontalAlignment="Right" Margin="0,0,150,0" Grid.Row="3" VerticalAlignment="Center" Click="Button_Click_1" Width="150" Height="35"/>
+
+    </Grid>
+</Window>
