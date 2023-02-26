@@ -20,7 +20,7 @@ namespace HWork_10._1
             private set { }
         }
         /// <summary>
-        /// чтение аккаунтов из файла
+        /// чтение аккаунтов из файла .txt записанные в формате Ф#И#О#тел#паспорт
         /// </summary>
         /// <returns>возвращает лист аккаунтов</returns>
         public List<Account> read()
